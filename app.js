@@ -26,7 +26,7 @@ const projects = [
     demo: '',
     repo: '',
     stack: ['html','javascript','boostrap','jquery','google suite'],
-    image: '/imagenes/usuarios.png'
+    image: 'imagenes/usuarios.png'
   },
   {
     id: 4,
