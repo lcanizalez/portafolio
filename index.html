@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portafolio — Tu Nombre</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <h1 class="logo">Portafolio Personal de Tecnología – Soluciones LG 2026</h1>
+        <nav class="nav">
+          <a href="#proyectos">Proyectos</a>
+          <a href="#sobre-mi">Sobre mí</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h2>Portafolio Personal de Tecnología – Soluciones LG 2026</h2>
+          <p>Demostración de soluciones tecnológicas: aplicaciones, automatizaciones y microservicios.</p>
+        </div>
+      </section>
+
+      <section id="proyectos" class="container proyectos">
+        <h3>Proyectos</h3>
+        <div id="grid" class="grid"></div>
+      </section>
+
+      <section id="sobre-mi" class="container sobre-mi">
+        <h3>Sobre mí</h3>
+        <p>Breve descripción profesional: tecnologías, experiencia y enfoque en resolver problemas.</p>
+      </section>
+
+      <section id="contacto" class="container contacto">
+        <h3>Contacto</h3>
+        <p>Puedes contactarme en: <a href="mailto:lcanizalez@gmail.com">lcanizalez@gmail.com</a></p>
+        <form id="contactForm">
+          <label>Nombre<input type="text" name="nombre" required></label>
+          <label>Email<input type="email" name="email" required></label>
+          <label>Mensaje<textarea name="mensaje" rows="4" required></textarea></label>
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">© <span id="year"></span> Portafolio Personal de Tecnología – Soluciones LG 2026 — <a href="mailto:lcanizalez@gmail.com">lcanizalez@gmail.com</a></div>
+    </footer>
+
+    <div id="modal" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <button id="modalClose" class="modal-close">Cerrar</button>
+        <div class="modal-body">
+          <img id="modalImage" src="" alt="" style="max-width:100%;border-radius:6px;margin-bottom:12px;display:none;" />
+          <h4 id="modalTitle"></h4>
+          <p id="modalDesc"></p>
+          <strong>Tecnologías:</strong>
+          <ul id="modalStack"></ul>
+          <p><a id="modalLink" href="#" target="_blank" class="btn">Ver demo / repositorio</a></p>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
