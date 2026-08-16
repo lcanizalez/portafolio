@@ -15,6 +15,21 @@ body{font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;margin:0;background:v
 .logo{margin:0;padding:18px 0;font-size:1.25rem}
 .nav a{margin-left:16px;color:var(--accent);text-decoration:none}
 .hero{padding:48px 0;text-align:center}
+.cv-button{
+  display:inline-block;
+  background:#ff6e0b;
+  color:#fff;
+  padding:12px 20px;
+  border-radius:6px;
+  font-weight:600;
+  text-decoration:none;
+}
+.cv-button:hover,.cv-button:focus-visible{background:#d85d08}
+.cv-button img{
+  display:block;
+  max-width:160px;
+  height:auto;
+}
 .hero h2{margin:0 0 8px;font-size:1.8rem}
 .proyectos h3,.sobre-mi h3,.contacto h3{margin-top:0}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:12px}
