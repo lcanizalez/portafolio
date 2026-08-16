@@ -55,16 +55,152 @@
       <div class="container">© <span id="year"></span> Portafolio of Technology – LG Solutions 2026 — <a href="mailto:lcanizalez@gmail.com">lcanizalez@gmail.com</a></div>
     </footer>
 
+    <!-- Modal de Detalles del Proyecto (Original) -->
     <div id="modal" class="modal" aria-hidden="true">
       <div class="modal-content">
-        <button id="modalClose" class="modal-close">Cerrar</button>
+        <div class="modal-header">
+          <h4 id="modalTitle"></h4>
+          <button id="modalClose" class="modal-close" aria-label="Cerrar modal">✕</button>
+        </div>
         <div class="modal-body">
           <img id="modalImage" src="" alt="" style="max-width:100%;border-radius:6px;margin-bottom:12px;display:none;" />
-          <h4 id="modalTitle"></h4>
           <p id="modalDesc"></p>
           <strong>Technologies:</strong>
           <ul id="modalStack"></ul>
-          <p><a id="modalLink" href="#" target="_blank" class="btn">See demo / repository</a></p>
+          <div class="modal-actions">
+            <button id="editImageBtn" class="btn secondary" style="display:none;">Edit Image</button>
+            <a id="modalLink" href="#" target="_blank" class="btn">See demo / repository</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lightbox Mejorado -->
+    <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
+      <div class="lightbox-container">
+        <button class="lightbox-close" aria-label="Close viewer">✕</button>
+        
+        <div class="lightbox-main">
+          <button class="lightbox-nav prev" aria-label="Previous image">❮</button>
+          <div class="lightbox-image-wrapper">
+            <img id="lightboxImage" src="" alt="" class="lightbox-image" />
+            <div class="lightbox-zoom-hint" style="display:none;">Click to zoom</div>
+          </div>
+          <button class="lightbox-nav next" aria-label="Next image">❯</button>
+        </div>
+
+        <div class="lightbox-controls">
+          <button class="lightbox-control-btn" id="zoomInBtn" aria-label="Zoom in" title="Zoom in">🔍+</button>
+          <button class="lightbox-control-btn" id="zoomOutBtn" aria-label="Zoom out" title="Zoom out">🔍−</button>
+          <button class="lightbox-control-btn" id="fullscreenBtn" aria-label="Fullscreen" title="Fullscreen">⛶</button>
+          <button class="lightbox-control-btn" id="rotateBtn" aria-label="Rotate" title="Rotate right">↻</button>
+          <span id="imageCounter" class="image-counter" aria-live="polite">1 / 1</span>
+        </div>
+
+        <div class="lightbox-info">
+          <p id="lightboxTitle"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Zoomed Image Modal -->
+    <div id="zoomModal" class="zoom-modal" aria-hidden="true" role="dialog">
+      <div class="zoom-modal-content">
+        <button class="zoom-modal-close" aria-label="Close zoom">✕</button>
+        <img id="zoomImage" src="" alt="" class="zoom-image" />
+      </div>
+    </div>
+
+    <!-- Editor de Imágenes -->
+    <div id="imageEditor" class="image-editor-modal" aria-hidden="true" role="dialog" aria-label="Image editor">
+      <div class="image-editor-content">
+        <div class="editor-header">
+          <h3>Image Editor</h3>
+          <button class="editor-close" aria-label="Close editor">✕</button>
+        </div>
+
+        <div class="editor-main">
+          <div class="editor-canvas-wrapper">
+            <canvas id="editorCanvas"></canvas>
+          </div>
+
+          <div class="editor-sidebar">
+            <div class="editor-section">
+              <h4>Transform</h4>
+              <button class="editor-btn" id="rotateLeftBtn">↺ Rotate Left</button>
+              <button class="editor-btn" id="rotateRightBtn">↻ Rotate Right</button>
+              <button class="editor-btn" id="flipHBtn">⟷ Flip H</button>
+              <button class="editor-btn" id="flipVBtn">⟨⟩ Flip V</button>
+              <button class="editor-btn" id="resetBtn">⟲ Reset</button>
+            </div>
+
+            <div class="editor-section">
+              <h4>Filters</h4>
+              <label>
+                Brightness: <span id="brightnessValue">100</span>%
+                <input type="range" id="brightnessSlider" min="0" max="200" value="100">
+              </label>
+              <label>
+                Contrast: <span id="contrastValue">100</span>%
+                <input type="range" id="contrastSlider" min="0" max="200" value="100">
+              </label>
+              <label>
+                Saturation: <span id="saturationValue">100</span>%
+                <input type="range" id="saturationSlider" min="0" max="200" value="100">
+              </label>
+              <div class="filter-presets">
+                <button class="filter-btn" data-filter="grayscale">B&W</button>
+                <button class="filter-btn" data-filter="sepia">Sepia</button>
+                <button class="filter-btn" data-filter="invert">Invert</button>
+                <button class="filter-btn" data-filter="blur">Blur</button>
+              </div>
+            </div>
+
+            <div class="editor-section">
+              <h4>Crop</h4>
+              <div class="crop-presets">
+                <button class="crop-btn" data-ratio="1:1">1:1</button>
+                <button class="crop-btn" data-ratio="16:9">16:9</button>
+                <button class="crop-btn" data-ratio="4:3">4:3</button>
+                <button class="crop-btn" data-ratio="free">Free</button>
+              </div>
+              <button class="editor-btn" id="applyCropBtn" style="display:none;">Apply Crop</button>
+            </div>
+
+            <div class="editor-actions">
+              <button class="editor-btn btn secondary" id="cancelEditorBtn">Cancel</button>
+              <button class="editor-btn btn" id="downloadBtn">↓ Download</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Image Upload Manager -->
+    <div id="uploadManager" class="upload-manager" aria-hidden="true" role="dialog" aria-label="Upload images">
+      <div class="upload-manager-content">
+        <div class="upload-header">
+          <h3>Upload Images</h3>
+          <button class="upload-close" aria-label="Close upload">✕</button>
+        </div>
+
+        <div class="upload-body">
+          <div class="upload-zone" id="uploadZone" aria-label="Drag and drop area for images">
+            <svg class="upload-icon" viewBox="0 0 24 24" width="48" height="48">
+              <path fill="currentColor" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+            </svg>
+            <p><strong>Drag images here</strong> or <button type="button" id="fileInputBtn" class="link-btn">select files</button></p>
+            <small>Supported: JPG, PNG, WebP • Max 10MB</small>
+          </div>
+
+          <input type="file" id="fileInput" multiple accept="image/jpeg,image/png,image/webp" style="display:none;" />
+
+          <div id="uploadPreview" class="upload-preview"></div>
+
+          <div class="upload-actions">
+            <button class="upload-close" id="closeUploadBtn">Cancel</button>
+            <button class="btn" id="insertImagesBtn" style="display:none;">Insert Images</button>
+          </div>
         </div>
       </div>
     </div>
