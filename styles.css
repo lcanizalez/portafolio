@@ -109,6 +109,18 @@ body{
 .secondary{background:#e6eef8;color:var(--accent)}
 .sobre-mi{
   background:linear-gradient(90deg,#fff 0,#fbfdff);border-top:1px solid #e6eef8;padding-bottom:36px}
+.about-intro{
+  max-width:880px;
+  margin:16px 0 0;
+  padding:20px 24px;
+  border-left:4px solid #ff6e0b;
+  border-radius:0 8px 8px 0;
+  background:#fff;
+  color:#334155;
+  font-size:1.05rem;
+  line-height:1.75;
+  box-shadow:0 4px 14px rgba(15,23,42,.06);
+}
 .contacto form{
   display:flex;
   flex-direction:column;
