@@ -15,6 +15,14 @@ body{font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;margin:0;background:v
 .logo{margin:0;padding:18px 0;font-size:1.25rem}
 .nav a{margin-left:16px;color:var(--accent);text-decoration:none}
 .hero{padding:48px 0;text-align:center}
+.hero-content{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:24px;
+  text-align:left;
+}
+.hero-content p{margin:0;max-width:560px}
 .cv-button{
   display:inline-block;
   background:#ff6e0b;
@@ -27,7 +35,7 @@ body{font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;margin:0;background:v
 .cv-button:hover,.cv-button:focus-visible{background:#d85d08}
 .cv-button img{
   display:block;
-  max-width:160px;
+  max-width:80px;
   height:auto;
 }
 .hero h2{margin:0 0 8px;font-size:1.8rem}
@@ -79,6 +87,7 @@ overflow-y: auto;
     flex-direction:column;
     align-items:flex-start}
   .nav{margin-top:8px}
+  .hero-content{flex-direction:column;text-align:center}
 }
 .portafolio{
   font-family: 'Arial', sans-serif;
