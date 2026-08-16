@@ -2,7 +2,7 @@ const projects = [
   {
     id: 1,
     title: 'Business Proposals Management',
-    desc: 'Managing business proposals involves coordinating and preparing responses to proposals, building the team, and overseeing the proposal development process from receipt to acceptance.',
+    desc: 'Managing business proposals involves coordinating and preparing responses to proposals, building the team, and seeing the proposal development process from receipt to acceptance.',
     demo: '',
     repo: '',
     stack: ['html','javascript','boostrap','jquery','appscript','google suite'],
@@ -22,7 +22,7 @@ const projects = [
   {
     id: 3,
     title: 'Manage User Accounts',
-    desc: 'Managing user accounts involves the governance, control, and lifecycle administration of user identities across enterprise systems.',
+    desc: 'Managing user accounts involves the goSeenance, control, and lifecycle administration of user identities across enterprise systems.',
     demo: '',
     repo: '',
     stack: ['html','javascript','boostrap','jquery','google suite'],
@@ -54,13 +54,13 @@ function mountProjects() {
   projects.forEach(p => {
     const card = document.createElement('article');
     card.className = 'card';
-    const repoLink = p.repo ? `<a class="btn secondary" href="${p.repo}" target="_blank">Repositorio</a>` : '';
+    const repoLink = p.repo ? `<a class="btn secondary" href="${p.repo}" target="_blank">Repository</a>` : '';
     const demoLink = p.demo ? `<a class="btn" href="${p.demo}" target="_blank">Demo</a>` : '';
     card.innerHTML = `
       <h4>${p.title}</h4>
       <p>${p.desc}</p>
       <div class="actions">
-        <button class="btn" data-id="${p.id}">Detalles</button>
+        <button class="btn" data-id="${p.id}">Details</button>
         ${demoLink}
         ${repoLink}
       </div>
@@ -89,7 +89,7 @@ function openModal(project){
   if(project.image){ img.src = project.image; img.style.display = ''; img.alt = project.title; } else { img.style.display = 'none'; }
   const link = document.getElementById('modalLink');
   link.href = project.demo || project.repo || '#';
-  link.textContent = project.demo ? 'Ver demo' : (project.repo ? 'Ver repositorio' : 'Sin enlace');
+  link.textContent = project.demo ? 'See demo' : (project.repo ? 'See Repository' : 'Sin enlace');
   modal.setAttribute('aria-hidden','false');
 }
 
