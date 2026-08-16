@@ -30,13 +30,43 @@ body{font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;margin:0;background:v
 .site-footer{padding:18px 0;text-align:center;color:var(--muted);margin-top:24px}
 
 /* modal */
-.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,.4);padding:20px}
+.modal{
+  position:fixed;inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  background:rgba(2,6,23,.4);
+  padding:20px
+}
 .modal[aria-hidden="false"]{display:flex}
-.modal-content{background:var(--card);padding:20px;border-radius:8px;max-width:640px;width:100%;max-height:calc(100vh - 40px);overflow-y:auto;box-shadow:0 6px 30px rgba(2,6,23,.18)}
-.modal-close{background:#fff;border:1px solid #e6eef8;padding:6px 8px;border-radius:6px;cursor:pointer;float:right}
+.modal-content{
+  background:var(--card);
+  padding:20px;
+  border-radius:8px;
+  max-width:640px;
+  width:100%;
+  max-height:calc(100vh - 40px);
+  overflow-y:auto;
+  box-shadow:0 6px 30px rgba(2,6,23,.18)
+}
+.modal-close{
+  background:#fff;
+  border:1px solid #e6eef8;
+  padding:6px 8px;
+  border-radius:6px;
+  cursor:pointer;
+  float:right
+}
 max-height: calc(100vh - 40px);
 overflow-y: auto;
 @media (max-width:560px){
-  .header-inner{flex-direction:column;align-items:flex-start}
+  .header-inner{
+    flex-direction:column;
+    align-items:flex-start}
   .nav{margin-top:8px}
+}
+.portafolio{
+  font-family: 'Arial', sans-serif;
+  font-size: 1.5rem;
+  color:#ff6e0b;
 }
