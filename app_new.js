@@ -645,6 +645,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target === e.currentTarget) closeModal();
   });
 
+    document.getElementById('modalClose').addEventListener('click', (e) => {
+    closeModal();
+  });
+
+
   // Zoom modal close
   document.querySelector('.zoom-modal-close').addEventListener('click', () => {
     document.getElementById('zoomModal').setAttribute('aria-hidden', 'true');

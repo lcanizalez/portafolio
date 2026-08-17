@@ -44,24 +44,7 @@ const projects = [
     demo: '',
     repo: '',
     stack: ['html','javascript','boostrap','jquery','google suite'],
-    image: 'imagenes/asset.jpg'  },
-  {
-    id: 6,
-    title: 'Ada Profile 1',
-    desc: 'Professional profile portfolio showcasing technical skills, expertise, and professional accomplishments.',
-    demo: '',
-    repo: '',
-    stack: ['portfolio','professional','profile'],
-    image: 'imagenes/ada1.jpg'
-  },
-  {
-    id: 7,
-    title: 'Ada Profile 2',
-    desc: 'Advanced profile portfolio demonstrating continuous professional development and industry expertise.',
-    demo: '',
-    repo: '',
-    stack: ['portfolio','professional','profile'],
-    image: 'imagenes/ada2.jpg'  }
+    image: 'imagenes/asset.jpg'  }
 ];
 
 function mountProjects() {

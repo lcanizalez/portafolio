@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio - Leonardo García | Tech Solutions</title>
+  <link rel="stylesheet" href="template-styles.css" />
+</head>
+<body>
+  <div class="container-main">
+    <!-- SIDEBAR IZQUIERDO -->
+    <aside class="sidebar">
+      <!-- Foto de perfil -->
+      <div class="profile-image-container">
+        <img src="imagenes/leo.png" alt="Leonardo García" class="profile-image" />
+      </div>
+
+      <!-- Navegación -->
+      <nav class="sidebar-nav">
+        <a href="#home" class="nav-item active">
+          <span class="nav-icon">🏠</span>
+          <span>Home</span>
+        </a>
+        <a href="#projects" class="nav-item">
+          <span class="nav-icon">💼</span>
+          <span>Projects</span>
+        </a>
+        <a href="#about" class="nav-item">
+          <span class="nav-icon">👤</span>
+          <span>About Me</span>
+        </a>
+      </nav>
+
+      <!-- Idiomas -->
+      <div class="languages">
+        <button class="lang-btn active">ES</button>
+        <span>/</span>
+        <button class="lang-btn">EN</button>
+      </div>
+
+      <!-- Redes Sociales -->
+      <div class="social-links">
+        <a href="#" class="social-icon" title="Instagram">📸</a>
+        <a href="#" class="social-icon" title="LinkedIn">💼</a>
+        <a href="#" class="social-icon" title="TikTok">🎵</a>
+        <a href="#" class="social-icon" title="GitHub">💻</a>
+      </div>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+      <!-- Header con botón CTA -->
+      <header class="main-header">
+        <button class="cta-button">Work with me</button>
+      </header>
+
+      <!-- Hero Section -->
+      <section id="home" class="hero-section">
+        
+        <div class="hero-text">
+          <div class="hero-line">
+            <span class="line-number">01</span>
+            <h1>&lt;Hello, I'm <span class="highlight">Leonardo</span>!&gt;</h1>
+          </div>
+          
+          <div class="hero-line">
+            <span class="line-number">02</span>
+            <h2>&lt;I build <span class="highlight">automated</span> solutions&gt;</h2>
+          </div>
+          
+          <div class="hero-line">
+            <span class="line-number">03</span>
+            <h2>&lt;and scalable systems.&gt;</h2>
+          </div>
+        </div>
+
+        <p class="hero-subtitle">I also optimize business processes, integrate systems, and streamline workflows.</p>
+
+        <button class="learn-more-btn">
+          Learn more
+          <span class="arrow">↓</span>
+        </button>
+      </section>
+
+      <!-- Projects Preview -->
+      <section id="projects" class="projects-section">
+        <h3>Recent Projects</h3>
+        <div class="projects-grid">
+          <div class="project-card">
+            <img src="imagenes/proposals.jpg" alt="Proposals" />
+            <h4>Business Proposals</h4>
+            <p>Automation and management system</p>
+          </div>
+          <div class="project-card">
+            <img src="imagenes/emailMarketing.jpg" alt="Email Marketing" />
+            <h4>Email Campaigns</h4>
+            <p>Marketing automation platform</p>
+          </div>
+          <div class="project-card">
+            <img src="imagenes/usuarios.png" alt="Users" />
+            <h4>User Management</h4>
+            <p>Identity and access control</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about-section">
+        <h3>About Me</h3>
+        <p>
+          I partner with teams to identify repetitive, error-prone processes and convert them into automated, scalable solutions. Using modern web technologies and Google Workspace automation, I build tools that standardize data, enforce validation, and integrate systems.
+        </p>
+      </section>
+
+      <!-- Footer -->
+      <footer class="main-footer">
+        <p>&copy; <span id="year"></span> Portfolio - Leonardo García | <a href="mailto:lcanizalez@gmail.com">lcanizalez@gmail.com</a></p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    // Establecer año actual
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
